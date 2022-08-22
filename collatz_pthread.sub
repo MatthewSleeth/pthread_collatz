@@ -1,0 +1,16 @@
+#!/bin/bash
+#SBATCH -A CS4380_5351_7332 # account name
+#SBATCH -J project3         # job name
+#SBATCH -o project3.%j      # name of the output and error file
+#SBATCH -N 1                # total number of nodes requested
+#SBATCH -n 1                # total number of tasks requested
+#SBATCH -p small            # queue name
+#SBATCH -t 00:00:30         # expected maximum runtime (hh:mm:ss)
+
+date
+
+./collatz_pthread 17000000 56
+./collatz_pthread 170000000 56
+./collatz_pthread 1700000000 56
+
+date
